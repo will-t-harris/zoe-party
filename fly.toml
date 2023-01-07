@@ -1,4 +1,4 @@
-app = "zoe-20s-party-b0b8"
+app = "zoe-party"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
