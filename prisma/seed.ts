@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { PRIMARY_REDACTED, SECONDARY_REDACTED } from "~/constants";
 import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
@@ -13,7 +14,7 @@ async function seed() {
 
   const hashedPassword = await bcrypt.hash("racheliscool", 10);
 
-  const user = await prisma.user.create({
+  await prisma.user.create({
     data: {
       email,
       password: {
@@ -24,21 +25,24 @@ async function seed() {
     },
   });
 
-  await prisma.note.create({
-    data: {
-      title: "My first note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
-  });
+  let characterPromises = [];
+  for (let { name, image } of Object.values(PRIMARY_REDACTED)) {
+    characterPromises.push(
+      prisma.role.create({
+        data: { type: "primary", name: name, redactedImage: image },
+      })
+    );
+  }
 
-  await prisma.note.create({
-    data: {
-      title: "My second note",
-      body: "Hello, world!",
-      userId: user.id,
-    },
-  });
+  for (let { name, image } of Object.values(SECONDARY_REDACTED)) {
+    characterPromises.push(
+      prisma.role.create({
+        data: { type: "secondary", name: name, redactedImage: image },
+      })
+    );
+  }
+
+  await prisma.$transaction([...characterPromises]);
 
   console.log(`Database has been seeded. 🌱`);
 }

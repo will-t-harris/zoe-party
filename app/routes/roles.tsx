@@ -4,13 +4,13 @@ import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
 import { requireUserId } from "~/session.server";
 import { useUser } from "~/utils";
-import { getNoteListItems } from "~/models/note.server";
+import { getAllRoles } from "~/models/role.server";
 
 export async function loader({ request }: LoaderArgs) {
   const userId = await requireUserId(request);
   //TODO replace with logic to get all redacted roles
-  const noteListItems = await getNoteListItems({ userId });
-  return json({ noteListItems });
+  const roles = await getAllRoles();
+  return json({ roles });
 }
 
 export default function RolesPage() {
@@ -35,6 +35,16 @@ export default function RolesPage() {
         <h1 className="text-center text-6xl font-extrabold tracking-tight text-black sm:text-8xl lg:text-9xl">
           Roles
         </h1>
+        <div>
+          {data.roles.map((role) => {
+            return (
+              <div>
+                <p>{role.name}</p>
+                <img src={role.redactedImage} />
+              </div>
+            );
+          })}
+        </div>
       </main>
     </div>
   );
