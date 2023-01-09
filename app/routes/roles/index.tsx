@@ -22,7 +22,7 @@ export default function RolesPage() {
 
   return (
     <div className="flex h-full min-h-screen flex-col">
-      <header className="flex items-center justify-between bg-yellow-50 p-4 text-black opacity-70">
+      <header className="flex items-center justify-between bg-yellow-100 p-4 text-black">
         <p>{user.email}</p>
         <Form action="/logout" method="post">
           <button
@@ -34,8 +34,8 @@ export default function RolesPage() {
         </Form>
       </header>
 
-      <main>
-        <div className="flex-flex-col mt-14 justify-center">
+      <main className="pb-14">
+        <div className="flex-flex-col mt-14 mb-8 justify-center">
           <h2 className="mb-4 text-center text-xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-6xl">
             Primary Roles
           </h2>
