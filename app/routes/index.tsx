@@ -4,6 +4,7 @@ import { useOptionalUser } from "~/utils";
 
 export default function Index() {
   const user = useOptionalUser();
+
   return (
     <main className="relative min-h-screen sm:flex sm:items-center sm:justify-center">
       <div className="relative sm:pb-16 ">

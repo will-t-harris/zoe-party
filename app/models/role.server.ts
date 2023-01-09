@@ -6,6 +6,10 @@ export function getAllRoles() {
   return prisma.role.findMany();
 }
 
+export function getRoleByName(name: string) {
+  return prisma.role.findUnique({ where: { name: name } });
+}
+
 // export function getRole({
 //   id,
 //   userId,
