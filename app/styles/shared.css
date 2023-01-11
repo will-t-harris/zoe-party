@@ -18,6 +18,10 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+.text-background {
+  background-color: #292524;
+}
+
 @keyframes flickering {
   0% {
     color: #912914;

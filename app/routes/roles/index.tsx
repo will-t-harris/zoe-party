@@ -38,7 +38,7 @@ export default function RolesPage() {
         <h1 className="flickering-text mb-4 mt-20 text-center text-xl">
           A party to die for
         </h1>
-        <div className="mx-auto mt-20 max-w-2xl">
+        <div className="text-background mx-auto mt-20 max-w-2xl p-8">
           <p className="mb-2">
             You've been invited to a murder mystery party set in a 1920's
             speakeasy. Guests are on a mission to uncover clues, discover
