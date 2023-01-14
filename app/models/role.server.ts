@@ -10,42 +10,17 @@ export function getRoleByName(name: string) {
   return prisma.role.findUnique({ where: { name: name } });
 }
 
-// export function getRole({
-//   id,
-//   userId,
-// }: Pick<Note, "id"> & {
-//   userId: User["id"];
-// }) {
-//   return prisma.note.findFirst({
-//     select: { id: true, body: true, title: true },
-//     where: { id, userId },
-//   });
-// }
-//
-// export function getNoteListItems({ userId }: { userId: User["id"] }) {
-//   return prisma.note.findMany({
-//     where: { userId },
-//     select: { id: true, title: true },
-//     orderBy: { updatedAt: "desc" },
-//   });
-// }
-//
-// export function createNote({
-//   body,
-//   title,
-//   userId,
-// }: Pick<Note, "body" | "title"> & {
-//   userId: User["id"];
-// }) {
-//   return prisma.note.create({
-//     data: {
-//       title,
-//       body,
-//       user: {
-//         connect: {
-//           id: userId,
-//         },
-//       },
-//     },
-//   });
-// }
+export async function chooseRole(name: string, userEmail: string) {
+  const user = await prisma.user.findUnique({ where: { email: userEmail } });
+
+  await prisma.$transaction([
+    prisma.role.update({
+      where: { name: name },
+      data: { userId: user?.id },
+    }),
+    prisma.user.update({
+      where: { email: userEmail },
+      data: { roleName: name },
+    }),
+  ]);
+}
