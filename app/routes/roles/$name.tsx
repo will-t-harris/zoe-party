@@ -20,7 +20,7 @@ export default function RoleDetailsPage() {
 
   return (
     <>
-      <header className="flex items-center justify-between bg-yellow-100 p-4 text-black">
+      <header className="header-background flex items-center justify-between p-4 text-black">
         <p>{user.email}</p>
         <div className="flex gap-4">
           <Link to={"/roles"}>
