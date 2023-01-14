@@ -1,10 +1,11 @@
-import type { LoaderArgs } from "@remix-run/node";
+import {  LoaderArgs,  } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Form, Link, Outlet, useLoaderData } from "@remix-run/react";
+import {  Link, Outlet, useLoaderData } from "@remix-run/react";
 import { partition } from "lodash";
 
 import { useUser } from "~/utils";
 import { getAllRoles } from "~/models/role.server";
+import Header from "~/components/header";
 
 export async function loader({ request: _request }: LoaderArgs) {
   const roles = await getAllRoles();
@@ -22,18 +23,7 @@ export default function RolesPage() {
 
   return (
     <div className="flex h-full min-h-screen flex-col">
-      <header className="header-background flex items-center justify-between p-4 text-black">
-        <p>{user.email}</p>
-        <Form action="/logout" method="post">
-          <button
-            type="submit"
-            className="rounded bg-slate-600 py-2 px-4 text-blue-100 hover:bg-blue-500 active:bg-blue-600"
-          >
-            Logout
-          </button>
-        </Form>
-      </header>
-
+      <Header />
       <main className="pb-14 text-white">
         <h1 className="flickering-text mb-4 mt-20 text-center text-xl">
           A party to die for
@@ -65,9 +55,10 @@ export default function RolesPage() {
               all claimed.
             </strong>{" "}
           </p>
-          <p className="mb-2">            
+          <p className="mb-2">
             If there are two people mentioned on your invitation, please log in
-            and choose roles separately, <strong>with separate email addresses.</strong>
+            and choose roles separately,{" "}
+            <strong>with separate email addresses.</strong>
           </p>
           <p className="mb-2">
             Your secret-filled role card will be sent to the email address you
@@ -89,7 +80,7 @@ export default function RolesPage() {
               return (
                 <li key={role.id} className="flex content-center">
                   <Link
-                    to={`/roles/${decodeURIComponent(role.name)}`}
+                    to={`/roles/${role.name}`}
                     className="underline visited:text-purple-400"
                   >
                     {role.name}
