@@ -59,8 +59,8 @@ export default function RolesPage() {
             <strong>with separate email addresses.</strong>
           </p>
           <p className="mb-2">
-            Your secret-filled role card will be sent to the email address you
-            provide as soon as your role is claimed.
+            You can download your secret-filled role card as soon as your role
+            is claimed.
           </p>
           <p className="mb-2">
             The guest who figures out the killer and their motive will win a
