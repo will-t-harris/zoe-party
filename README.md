@@ -5,9 +5,10 @@ This repo is a simple Remix app for a friend's 20's-themed birthday party.
 Uses:
 
 - Fly.io deployment with Docker.
-- SQLite database.
-- Email/password auth with cookie-based sessions.
+- Github actions to automate deployment to Fly.
+- A small, simple SQLite database.
 - Prisma as an ORM.
+- Email/password auth with cookie-based sessions.
 - Tailwind for styling.
 - TypeScript for static types.
 - Cypress/Vitest plumbing for testing. None of this is currently used but was included in the template I used to start the project.
