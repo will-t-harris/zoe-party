@@ -3,7 +3,6 @@ import { json } from "@remix-run/node";
 import {  Link, Outlet, useLoaderData } from "@remix-run/react";
 import { partition } from "lodash";
 
-import { useUser } from "~/utils";
 import { getAllRoles } from "~/models/role.server";
 import Header from "~/components/header";
 
@@ -14,7 +13,6 @@ export async function loader({ request: _request }: LoaderArgs) {
 
 export default function RolesPage() {
   const data = useLoaderData<typeof loader>();
-  const user = useUser();
 
   const [primaryRoles, secondaryRoles] = partition(
     data.roles,

@@ -24,6 +24,49 @@ export const Secondary = {
   TheVagabond: "/Secondary/TheVagabond.png",
 };
 
+export const IMAGE_MAP = {
+  "The Aspiring Actress":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheAspiringActress_tbro3j.png",
+  "The Billionaire":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheBillionaire_tb8xfm.png",
+  "The Chef":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheChef_khgqcd.png",
+  "The Conwoman":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheConwoman_wscgne.png",
+  "The Detective":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheDetective_kyw5il.png",
+  "The Gangster":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheGangster_fbmvyg.png",
+  "The Gold Digger":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheGoldDigger_yhtoa1.png",
+  "The Pilot":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739164/ThePilot_jj5cv9.png",
+  "The Plastic Surgeon":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739164/ThePlasticSurgeon_gk97ro.png",
+  "The Professor":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739164/TheProfessor_qvzfg2.png",
+  "The Black Widow":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/TheBlackWidow_xx6qtp.png",
+  "The Bootlegger":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheBootlegger_p4exf3.png",
+  "The Debonaire Artist":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739162/TheDebonairArtist_nuxfy7.png",
+  "The Illegal Bookie":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/TheIllegalBookie_ispaon.png",
+  "The Journalist":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/TheJournalist_loeeis.png",
+  "The Mad Scientist":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/TheMadScientist_urvwvt.png",
+  "The Model":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/TheModel_qifl3r.png",
+  "The Photographer":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739163/ThePhotographer_hamfs5.png",
+  "The Socialite":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739164/TheSocialite_ijd0mz.png",
+  "The Vagabond":
+    "https://res.cloudinary.com/willharris/image/upload/v1673739164/TheVagabond_mbbbph.png",
+};
+
 export const PRIMARY_REDACTED = {
   TheAspiringActress: {
     name: "The Aspiring Actress",

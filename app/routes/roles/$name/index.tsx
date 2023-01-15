@@ -43,6 +43,7 @@ export default function RoleDetailsPage() {
   const data = useLoaderData<typeof loader>();
 
   const [isRoleTaken] = useState(data.role.userId !== null);
+
   return (
     <>
     <Header />

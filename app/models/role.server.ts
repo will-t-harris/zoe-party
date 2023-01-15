@@ -12,6 +12,7 @@ export function getRoleByName(name: string) {
 
 export async function chooseRole(name: string, userEmail: string) {
   const user = await prisma.user.findUnique({ where: { email: userEmail } });
+  await prisma.role.findUnique({ where: { name: name } });
 
   await prisma.$transaction([
     prisma.role.update({
