@@ -31,7 +31,7 @@ export default function ConfirmationPage() {
   };
   return (
     <>
-      <Header />
+      <Header showBackButton />
       <div className="flex flex-col items-center justify-center px-10 pt-20">
         <p className="mb-4 text-white">{`You chose ${data.name}! 🎉`}</p>
         <p className="mb-4 text-white">

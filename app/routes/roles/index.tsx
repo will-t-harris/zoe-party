@@ -1,6 +1,6 @@
-import {  LoaderArgs,  } from "@remix-run/node";
+import { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import {  Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 import { partition } from "lodash";
 
 import { getAllRoles } from "~/models/role.server";
@@ -21,7 +21,7 @@ export default function RolesPage() {
 
   return (
     <div className="flex h-full min-h-screen flex-col">
-      <Header />
+      <Header showBackButton={false} />
       <main className="pb-14 text-white">
         <h1 className="flickering-text mb-4 mt-20 text-center text-xl">
           A party to die for
