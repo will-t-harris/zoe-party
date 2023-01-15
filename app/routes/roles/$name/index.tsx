@@ -1,5 +1,5 @@
 import { ActionArgs, json, LoaderArgs, redirect } from "@remix-run/node";
-import { Form, Link, Outlet, useCatch, useLoaderData } from "@remix-run/react";
+import { Form, Outlet, useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import invariant from "tiny-invariant";
 import Header from "~/components/header";
@@ -46,7 +46,7 @@ export default function RoleDetailsPage() {
 
   return (
     <>
-    <Header />
+      <Header showBackButton />
       <div className="mt-8 flex flex-col justify-center">
         {!isRoleTaken && !user.roleName && (
           <div className="flex justify-center">
